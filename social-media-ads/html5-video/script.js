@@ -153,7 +153,25 @@ function drawButton(text, x, y, width, height, opacity = 1) {
     
     ctx.fillStyle = gradient;
     ctx.beginPath();
-    ctx.roundRect(x - width/2, y - height/2, width, height, 30);
+    
+    // Draw rounded rectangle with fallback for browser compatibility
+    if (ctx.roundRect) {
+        ctx.roundRect(x - width/2, y - height/2, width, height, 30);
+    } else {
+        // Fallback: draw rounded rectangle using arcs
+        const radius = 30;
+        const rectX = x - width/2;
+        const rectY = y - height/2;
+        ctx.moveTo(rectX + radius, rectY);
+        ctx.lineTo(rectX + width - radius, rectY);
+        ctx.arcTo(rectX + width, rectY, rectX + width, rectY + radius, radius);
+        ctx.lineTo(rectX + width, rectY + height - radius);
+        ctx.arcTo(rectX + width, rectY + height, rectX + width - radius, rectY + height, radius);
+        ctx.lineTo(rectX + radius, rectY + height);
+        ctx.arcTo(rectX, rectY + height, rectX, rectY + height - radius, radius);
+        ctx.lineTo(rectX, rectY + radius);
+        ctx.arcTo(rectX, rectY, rectX + radius, rectY, radius);
+    }
     ctx.fill();
     
     // Button text
