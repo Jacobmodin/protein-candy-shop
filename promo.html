@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #f0f0f0, #d9d9d9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .product {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .product h2 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-grid">
+        <div class="product">
+            <img src="assets/surt-apple.png" alt="Surt Apple">
+            <h2>Surt Apple</h2>
+        </div>
+        <div class="product">
+            <img src="assets/mango-peach.png" alt="Mango Peach">
+            <h2>Mango Peach</h2>
+        </div>
+        <div class="product">
+            <img src="assets/strawberry-lime.png" alt="Strawberry Lime">
+            <h2>Strawberry Lime</h2>
+        </div>
+        <div class="product">
+            <img src="assets/cola.png" alt="Cola">
+            <h2>Cola</h2>
+        </div>
+    </div>
+    <!--
+    Note: Please place your product images in the assets/ directory
+    -->
+</body>
+</html>
