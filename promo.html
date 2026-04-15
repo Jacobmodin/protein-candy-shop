@@ -1,63 +1,218 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promo Page</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #f0f0f0, #d9d9d9);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-        .product {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-        .product img {
-            width: 100%;
-            height: auto;
-        }
-        .product h2 {
-            margin: 10px 0;
-            font-size: 1.5em;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Swedish Protein Candy – Promo</title>
+  <style>
+    :root{
+      --card: rgba(10,12,16,.58);
+      --stroke: rgba(255,255,255,.14);
+      --text: #eef2ff;
+      --muted: rgba(238,242,255,.74);
+      --accent: #7c3aed;
+      --accent2: #22c55e;
+    }
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      display:grid;
+      place-items:center;
+
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(34,197,94,.18), transparent 60%),
+        radial-gradient(900px 500px at 85% 20%, rgba(124,58,237,.18), transparent 60%),
+        linear-gradient(120deg, rgba(0,0,0,.82), rgba(0,0,0,.55)),
+        url("assets/gym-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .wrap{
+      width:min(1180px, 92vw);
+      padding:28px;
+      border:1px solid var(--stroke);
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      border-radius: 18px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.60);
+    }
+
+    header{
+      display:flex;
+      gap:16px;
+      align-items:flex-end;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+    h1{
+      margin:0;
+      font-size: clamp(24px, 3.3vw, 38px);
+      letter-spacing:.2px;
+      line-height:1.1;
+    }
+    .sub{
+      margin:8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height:1.45;
+      max-width: 68ch;
+    }
+    .badge{
+      padding:10px 12px;
+      border:1px solid var(--stroke);
+      border-radius:999px;
+      background: rgba(0,0,0,.22);
+      font-weight:800;
+      white-space:nowrap;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap:14px;
+      margin-top:14px;
+    }
+    .product{
+      position:relative;
+      border:1px solid var(--stroke);
+      border-radius:14px;
+      padding:12px;
+      background: rgba(0,0,0,.22);
+      overflow:hidden;
+    }
+    .product::before{
+      content:"";
+      position:absolute;
+      inset:-45%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), transparent 52%);
+      transform: rotate(12deg);
+      pointer-events:none;
+    }
+
+    .imgwrap{
+      border-radius: 12px;
+      background: rgba(0,0,0,.12);
+      padding: 10px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    img{
+      width:100%;
+      height: 340px;
+      object-fit: contain;
+      display:block;
+      filter:
+        drop-shadow(0 24px 40px rgba(0,0,0,.65))
+        drop-shadow(0 0 18px rgba(255,255,255,.08));
+    }
+
+    .flavor{
+      margin-top:10px;
+      font-weight:900;
+      letter-spacing:.2px;
+      font-size: 15px;
+    }
+    .meta{
+      margin-top:4px;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    .footer{
+      display:flex;
+      gap:12px;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-top:18px;
+      padding-top:14px;
+      border-top:1px solid rgba(255,255,255,.10);
+    }
+    .fineprint{
+      color: rgba(238,242,255,.62);
+      font-size: 12px;
+      line-height:1.35;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      color: white;
+      font-weight:900;
+      letter-spacing:.2px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: linear-gradient(135deg, rgba(124,58,237,.95), rgba(34,197,94,.85));
+      box-shadow: 0 18px 40px rgba(0,0,0,.45);
+      transition: transform .12s ease, filter .12s ease;
+    }
+    .cta:hover{ transform: translateY(-1px); filter: brightness(1.05); }
+    .cta:active{ transform: translateY(0px); }
+
+    @media (max-width: 1040px){
+      .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      img{ height: 320px; }
+    }
+    @media (max-width: 560px){
+      .wrap{ padding:18px; }
+      .grid{ grid-template-columns: 1fr; }
+      img{ height: 320px; }
+      .badge{ width:100%; text-align:center; }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="product-grid">
-        <div class="product">
-            <img src="assets/surt-apple.png" alt="Surt Apple">
-            <h2>Surt Apple</h2>
-        </div>
-        <div class="product">
-            <img src="assets/mango-peach.png" alt="Mango Peach">
-            <h2>Mango Peach</h2>
-        </div>
-        <div class="product">
-            <img src="assets/strawberry-lime.png" alt="Strawberry Lime">
-            <h2>Strawberry Lime</h2>
-        </div>
-        <div class="product">
-            <img src="assets/cola.png" alt="Cola">
-            <h2>Cola</h2>
-        </div>
+  <main class="wrap" role="main">
+    <header>
+      <div>
+        <h1>Swedish Protein Candy</h1>
+        <p class="sub">Protein gummies med premiumkänsla — perfekt före/efter passet. Välj din favorit.</p>
+      </div>
+      <div class="badge">34g protein / 100g</div>
+    </header>
+
+    <section class="grid" aria-label="Smaker">
+      <article class="product">
+        <div class="imgwrap"><img src="assets/surt-apple.png" alt="Surt äpple" /></div>
+        <div class="flavor">Surt äpple</div>
+        <div class="meta">Fräsch & syrlig</div>
+      </article>
+
+      <article class="product">
+        <div class="imgwrap"><img src="assets/mango-peach.png" alt="Mango & Peach" /></div>
+        <div class="flavor">Mango &amp; Peach</div>
+        <div class="meta">Tropisk & mjuk</div>
+      </article>
+
+      <article class="product">
+        <div class="imgwrap"><img src="assets/strawberry-lime.png" alt="Strawberry & Lime" /></div>
+        <div class="flavor">Strawberry &amp; Lime</div>
+        <div class="meta">Söt & syrlig</div>
+      </article>
+
+      <article class="product">
+        <div class="imgwrap"><img src="assets/cola.png" alt="Cola" /></div>
+        <div class="flavor">Cola</div>
+        <div class="meta">Klassisk cola</div>
+      </article>
+    </section>
+
+    <div class="footer">
+      <div class="fineprint">
+        Lägg gymbakgrund i <strong>assets/gym-bg.jpg</strong> för träningskänslan.
+      </div>
+      <a class="cta" href="index.html">Shoppa nu</a>
     </div>
-    <!--
-    Note: Please place your product images in the assets/ directory
-    -->
+  </main>
 </body>
 </html>
