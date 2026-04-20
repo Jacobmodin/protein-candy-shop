@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweden Protein Candy - Interaktiv Annons</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Main container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="sweden-flag"></div>
+                <h1 class="brand-name">
+                    <span class="brand-sweden">SWEDEN</span>
+                    <span class="brand-protein">PROTEIN CANDY</span>
+                </h1>
+            </div>
+        </header>
+
+        <!-- Hero section -->
+        <section class="hero">
+            <div class="product-showcase">
+                <div class="product-image-container">
+                    <img src="assets/product-image.svg" alt="Sweden Protein Candy - Surt Äpple" class="product-image" id="productImage">
+                    <div class="glow-effect"></div>
+                </div>
+                
+                <div class="product-highlight">
+                    <h2 class="flavor">Surt Äpple</h2>
+                    <div class="protein-badge">
+                        <span class="protein-amount">34g</span>
+                        <span class="protein-label">PROTEIN / 100g</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits cards (click to reveal) -->
+            <div class="benefits-container">
+                <div class="benefits-title">
+                    <h3>Premium Innehåll</h3>
+                    <p class="subtitle">Klicka för att upptäcka fördelarna</p>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card" data-benefit="protein">
+                        <div class="benefit-icon">💪</div>
+                        <h4 class="benefit-title">Protein</h4>
+                        <div class="benefit-details">
+                            <p>34g högkvalitativt protein per 100g för muskeluppbyggnad och återhämtning.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-card" data-benefit="arginin">
+                        <div class="benefit-icon">⚡</div>
+                        <h4 class="benefit-title">L-Arginin</h4>
+                        <div class="benefit-details">
+                            <p>Aminosyra som stödjer blodcirkulationen och energinivåer.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-card" data-benefit="q10">
+                        <div class="benefit-icon">❤️</div>
+                        <h4 class="benefit-title">Koenzym Q10</h4>
+                        <div class="benefit-details">
+                            <p>Kraftfull antioxidant som stödjer cellulär energiproduktion.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-card" data-benefit="vitamin">
+                        <div class="benefit-icon">✨</div>
+                        <h4 class="benefit-title">B-Vitamin</h4>
+                        <div class="benefit-details">
+                            <p>Komplett B-vitaminkomplex för energi och välmående.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tagline -->
+            <div class="tagline">
+                <h2>Godis utan dåligt samvete!</h2>
+                <p class="tagline-sub">180g / 60 gummies</p>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <button class="cta-button primary" id="ctaBuy">
+                    <span>KÖP NU</span>
+                    <span class="cta-arrow">→</span>
+                </button>
+                <button class="cta-button secondary" id="ctaLearn">
+                    <span>LÄS MER</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="company-info">JA::CO AB, Göteborg</p>
+            <p class="tagline-footer">Premium proteingodis för den aktiva svensken</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
